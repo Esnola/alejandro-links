@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded',() =>{
     const anclas_enlaces = document.querySelectorAll('.link--anchor')
     posSecciones = []
-    diferencia = 100
+    diferencia = 300
     
     anclas_enlaces.forEach((r) => {
         objHref = r.getAttribute('href')
@@ -10,12 +10,12 @@ document.addEventListener('DOMContentLoaded',() =>{
         posSecciones.push({nombre: nomUbica , posicion: posTop})
     })
     
+    /*
     for(var clave in posSecciones) {
        console.log(clave +": " + posSecciones[clave].nombre);
        console.log(clave +": " + posSecciones[clave].posicion);
         
-    }
-    
+    */
     quitaClase = ()=>{
         anclas_enlaces.forEach((ancla) => {
                 ancla.classList.remove('ancla-activa')
@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded',() =>{
         } 
     })
     document.addEventListener('scroll',()=>{
-        console.log(posSecciones.length)
         quitaClase()
         posMin = posSecciones[0].posicion
         posMax = posSecciones[posSecciones.length-1].nombre
